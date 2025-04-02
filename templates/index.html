@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<body class="bg-beige2-500">
+    <div class="min-h-screen flex flex-col items-center justify-center bg-beige2-500 text-beige-500">
+        <div class="category-list mt-8 bg-black shadow-lg p-6 rounded-lg">
+            <h2 class="text-4xl underline font-semibold mb-4 text-white">Recipe Categories</h2>
+            {% if categories %}
+                <ul class="space-x-0">
+                    {% for category in categories %}
+                        <div>
+                            <a href="{{ url_for('category', category_name=category) }}" class="list-disc list-inside text-white text-1xl hover:text-blue-950 font-semibold ">
+                                {{ category }}
+                            </a>
+                        </div>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="text-red-500">No categories found. Please try again later.</p>
+            {% endif %}
+        </div>
+
+            <!--<h2 class="text-2xl font-semibold mb-4">Search for a Recipe</h2> -->
+        </div>
+    </div>
+
+</body>
+
+{% endblock %}

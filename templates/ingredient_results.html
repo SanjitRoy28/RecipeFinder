@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="text-center mt-8">
+        <h2 class="text-4xl font-bold mb-6">Recipes with "{{ ingredient }}"</h2>
+
+        {% if recipes %}
+            <div class="grid grid-cols-4 gap-6 mx-auto w-3/4">
+                {% for recipe in recipes %}
+                    <div class="bg-gray-900 text-white p-6 rounded-lg shadow-lg text-center transform transition-transform duration-300 hover:scale-105">
+                        <a href="{{ recipe.link }}" target="_blank" class="text-xl font-semibold hover:underline">
+                            {{ recipe.title }}
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="text-red-500 text-lg mt-4">No recipes found for this ingredient.</p>
+        {% endif %}
+        
+        <div class="mt-6">
+            <a href="{{ url_for('index') }}" class="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-900">Back to Home</a>
+        </div>
+    </div>
+{% endblock %}
