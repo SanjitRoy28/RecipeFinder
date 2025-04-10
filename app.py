@@ -59,7 +59,7 @@ def get_recipes_for_category(category_slug):
 # Get recipe details for a specific dish
 def get_recipe_details(dish_name):
     dish_slug = dish_name.strip().replace(" ", '-').lower()
-    api_key = "7d03a1fbbac47877a5f875a9bebd96a76687c116a164c77310f85536d048a58d"  # Replace with your actual API key
+    api_key = "a78df0fa490e6ecc649677f4e9847ef72a2cce0202c4aadacf7244e4f9404e22"  # Replace with your actual API key
     search = GoogleSearch({
         "q": dish_name,
         "api_key": api_key
